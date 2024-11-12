@@ -71,11 +71,11 @@ export default function Home() {
 
                   <div className="flex flex-col justify-between items-center sm:items-start">
                     <div className="flex gap-0.5">
-                      <Star className="size-4 text-green-600 full-green-600" />
-                      <Star className="size-4 text-green-600 full-green-600" />
-                      <Star className="size-4 text-green-600 full-green-600" />
-                      <Star className="size-4 text-green-600 full-green-600" />
-                      <Star className="size-4 text-green-600 full-green-600" />
+                      <Star className="size-4 text-green-600 fill-green-600" />
+                      <Star className="size-4 text-green-600 fill-green-600" />
+                      <Star className="size-4 text-green-600 fill-green-600" />
+                      <Star className="size-4 text-green-600 fill-green-600" />
+                      <Star className="size-4 text-green-600 fill-green-600" />
                     </div>
                     <p><span className="font-semibold">1.250</span> happy customers</p>
                   </div>

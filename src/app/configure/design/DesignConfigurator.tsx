@@ -1,31 +1,29 @@
-"use client"
+'use client'
 
-import HandleComponent from "@/components/HandleComponent"
-import { cn, formatPrice } from "@/lib/utils"
-import { AspectRatio } from "@radix-ui/react-aspect-ratio"
-import { ScrollArea } from "@radix-ui/react-scroll-area"
-import NextImage from "next/image"
-import { Rnd } from "react-rnd"
-import { RadioGroup } from "@headlessui/react"
-import { COLORS, FINISHES, MATERIALS, MODELS } from "@/validators/option-validator"
-import { useRef, useState } from "react"
-import { Label } from "@radix-ui/react-label"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Check, ChevronsUpDown } from "lucide-react"
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { BASE_PRICE } from "@/config/products"
-import { useUploadThing } from "@/lib/uploadthing"
-import { useToast } from "@/hooks/use-toast"
-import { useMutation } from "@tanstack/react-query"
-import { saveConfig as _saveConfig, SaveConfigArgs } from "./actions"
-import { useRouter } from "next/navigation"
-
+import HandleComponent from '@/components/HandleComponent'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { cn, formatPrice } from '@/lib/utils'
+import NextImage from 'next/image'
+import { Rnd } from 'react-rnd'
+import { RadioGroup } from '@headlessui/react'
+import { useRef, useState } from 'react'
+import { COLORS, FINISHES, MATERIALS, MODELS, } from '@/validators/option-validator'
+import { Label } from '@/components/ui/label'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, } from '@/components/ui/dropdown-menu'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, Check, ChevronsUpDown } from 'lucide-react'
+import { BASE_PRICE } from '@/config/products'
+import { useUploadThing } from '@/lib/uploadthing'
+import { useMutation } from '@tanstack/react-query'
+import { saveConfig as _saveConfig, SaveConfigArgs } from './actions'
+import { useRouter } from 'next/navigation'
+import { useToast } from '@/hooks/use-toast'
 
 interface DesignConfiguratorProps {
     configId: string
     imageUrl: string
-    imageDimensions: { width: number, height: number }
+    imageDimensions: { width: number; height: number }
 }
 
 const DesignConfigurator = ({
@@ -36,7 +34,6 @@ const DesignConfigurator = ({
     const { toast } = useToast()
     const router = useRouter()
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { mutate: saveConfig, isPending } = useMutation({
         mutationKey: ['save-config'],
         mutationFn: async (args: SaveConfigArgs) => {
@@ -124,8 +121,7 @@ const DesignConfigurator = ({
             const file = new File([blob], 'filename.png', { type: 'image/png' })
 
             await startUpload([file], { configId })
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (e) {
+        } catch (err) {
             toast({
                 title: 'Something went wrong',
                 description:
@@ -149,9 +145,7 @@ const DesignConfigurator = ({
         <div className='relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20'>
             <div
                 ref={containerRef}
-                className='relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center \
-                 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center focus:outline-none \
-                  focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+                className='relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p-12 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
                 <div className='relative w-60 bg-opacity-50 pointer-events-none aspect-[896/1831]'>
                     <AspectRatio
                         ref={phoneCaseRef}
@@ -243,9 +237,7 @@ const DesignConfigurator = ({
                                                 value={color}
                                                 className={({ active, checked }) =>
                                                     cn(
-                                                        'relative -m-0.5 flex cursor-pointer items-center justify-center \
-                                                         rounded-full p-0.5 active:ring-0 focus:ring-0 active:outline-none \
-                                                          focus:outline-none border-2 border-transparent',
+                                                        'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 active:ring-0 focus:ring-0 active:outline-none focus:outline-none border-2 border-transparent',
                                                         {
                                                             [`border-${color.tw}`]: active || checked,
                                                         }
@@ -324,8 +316,7 @@ const DesignConfigurator = ({
                                                         value={option}
                                                         className={({ active, checked }) =>
                                                             cn(
-                                                                'relative block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-sm border-2 \
-                                                                 border-zinc-200 focus:outline-none ring-0 focus:ring-0 outline-none sm:flex sm:justify-between',
+                                                                'relative block cursor-pointer rounded-lg bg-white px-6 py-4 shadow-sm border-2 border-zinc-200 focus:outline-none ring-0 focus:ring-0 outline-none sm:flex sm:justify-between',
                                                                 {
                                                                     'border-primary': active || checked,
                                                                 }
@@ -380,8 +371,9 @@ const DesignConfigurator = ({
                                 )}
                             </p>
                             <Button
-
-
+                                isLoading={isPending}
+                                disabled={isPending}
+                                loadingText="Saving"
                                 onClick={() =>
                                     saveConfig({
                                         configId,

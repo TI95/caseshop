@@ -74,7 +74,7 @@ const Page = () => {
                 onDragLeave={() => setIsDragOver(false)}
             >
                 {({ getRootProps, getInputProps }) => (
-                    <div className="h-full w-full felx-1 flex flex-col 
+                    <div className="h-full w-full flex-1 flex flex-col 
                         items-center justify-center"
                         {...getRootProps()}>
                         <input {...getInputProps()} />

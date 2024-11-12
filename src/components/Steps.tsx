@@ -10,7 +10,7 @@ const STEPS = [
         url: '/upload',
     },
     {
-        name: "Step 2: Customize designe",
+        name: "Step 2: Customize design",
         description: "Make the case yours",
         url: '/design',
     },
@@ -26,7 +26,7 @@ const Steps = () => {
     const pathname = usePathname()
 
     return (
-        <ol className='rounded-md bg-white lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-gray-200'>
+        <ol className='rounded-md bg-white lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-gray-200 mt-5'>
           {STEPS.map((step, i) => {
             const isCurrent = pathname.endsWith(step.url)
             const isCompleted = STEPS.slice(i + 1).some((step) =>
@@ -56,8 +56,9 @@ const Steps = () => {
                     <span className='flex-shrink-0'>
                       <img
                         src={imgPath}
+                        alt='snake'
                         className={cn(
-                          'flex h-20 w-20 object-contain items-center justify-center',
+                          'flex size-20 object-contain items-center justify-center',
                           {
                             'border-none': isCompleted,
                             'border-zinc-700': isCurrent,

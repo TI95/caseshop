@@ -114,7 +114,7 @@ export default function Home() {
                 absolute inset-x-0 -bottom-6 text-green-500" />
               </span> say
             </h2>
-            <img src="/snake-2.png" className="w-24 order-0 lg:order-2" />
+            <img src="/snake-2.png" className="w-24 order-0 lg:order-2" alt='snake' />
           </div>
 
           <div className="mx-auto grid mx-w-2xl grid-cols-1 px-4 lg:mx-0
@@ -129,14 +129,14 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  " The case feel durable and I even got a compliment on the design. 
+                  " The case feel durable and I even got a compliment on the design.
                   Had the case for two a half months now and <span className="p-0.5 bg-slate-800 text-white">the image super clear</span>, on the case I
                   had before, the image started fading into yellow-ish color after a couple week. Love it. "
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
                 <img
-                  className="rounde-full h-12 w-12 object-cover"
+                  className="rounded-full h-12 w-12 object-cover"
                   src="/users/user-1.png"
                   alt="user" />
                 <div className="flex flex-col">
@@ -159,17 +159,15 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 "I usually keep my phone together with my keys in my pocket
-                and that led to some pretty heavy scratchmarks on all of my
+                and that led to some pretty heavy scratch marks on all of my
                 last phone cases. This one, besides a barely noticeable
                 scratch on the corner,
-                <span className='p-0.5 bg-slate-800 text-white'>
-                  looks brand new after about half a year
-                </span>
+                <span className='p-0.5 bg-slate-800 text-white'> looks brand new after about half a year</span>
                 . I dig it."
               </div>
               <div className="flex gap-4 mt-2">
                 <img
-                  className="rounde-full h-12 w-12 object-cover"
+                  className="rounded-full h-12 w-12 object-cover"
                   src="/users/user-4.jpg"
                   alt="user" />
                 <div className="flex flex-col">
@@ -198,9 +196,7 @@ export default function Home() {
             text-balance !leading-tight
              font-bold text-5xl md:text-6xl text-gray-900">
                 Upload your photo and get
-                <span className="relative px-2 bg-green-600 text-white">
-                  your own case
-                </span>
+                <span className="relative px-2 bg-green-600 text-white"> your own case </span>
                 now
               </h2>
             </div>
@@ -240,11 +236,11 @@ export default function Home() {
             </li>
 
             <div className="flex justify-center">
-              <Link  className={buttonVariants({
-                  size: 'lg',
-                  className: "mx-auto mt-8"
+              <Link className={buttonVariants({
+                size: 'lg',
+                className: "mx-auto mt-8"
               })} href='/configure/upload'>
-              Create you own case now <ArrowRight className="h-4 w-4 ml-1.5"/></Link>
+                Create you own case now <ArrowRight className="h-4 w-4 ml-1.5" /></Link>
             </div>
           </ul>
 

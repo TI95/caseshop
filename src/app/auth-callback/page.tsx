@@ -16,7 +16,7 @@ const Page = () => {
     }, [])  
 
     const {data}  = useQuery({
-        queryKey: ['auth0callback'],
+        queryKey: ['auth-callback'],
         queryFn: async () => await getAuthStatus(),
         retry:true,
         retryDelay: 500,

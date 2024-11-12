@@ -4,18 +4,18 @@ import { Progress } from "@/components/ui/progress"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { db } from "@/db"
 import { formatPrice } from "@/lib/utils"
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
-import { redirect } from "next/navigation"
+// import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
+// import { redirect } from "next/navigation"
 import StatusDropdown from "./StatusDropdown" 
 
 const Page = async () => {
-    const { getUser } = getKindeServerSession()
-    const user = await getUser()
+  //  const { getUser } = getKindeServerSession()
+    //const user = await getUser()
 
-    const ADMIN_EMAIL = process.env.ADMIN_EMAIL
+   /* const ADMIN_EMAIL = process.env.ADMIN_EMAIL
     if (!user || user.email !== ADMIN_EMAIL) {
         return redirect('/')
-    }
+    } */
 
     const orders = await db.order.findMany({
         where: {

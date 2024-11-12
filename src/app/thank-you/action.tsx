@@ -7,32 +7,27 @@ export const getPaymentStatus = async ({ orderId }: { orderId: string }) => {
     const { getUser } = getKindeServerSession()
     const user = await getUser()
 
-    if (!user?.id || !user?.email) {
-        throw new Error("You need to be logged in to view this page")
+    if (!user?.id || !user.email) {
+        throw new Error('You need to be logged in to view this page.')
     }
 
     const order = await db.order.findFirst({
-        where: {
-            id: orderId,
-            userId: user.id,
-        },
+        where: { id: orderId, userId: user.id },
         include: {
             billingAddress: true,
             configuration: true,
             shippingAddress: true,
-            user: true
-        }
-
+            user: true,
+        },
     })
 
-    if (!order) {
-        throw new Error("Thus order does not exist")
-    }
+    if (!order) throw new Error('This order does not exist.')
 
-    if(order.isPaid) { 
-            return order 
-    }else {
+    if (order.isPaid) {
+        console.log('order is paid')
+        console.log(order)
+        return order
+    } else {
         return false
     }
-
 }

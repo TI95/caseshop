@@ -1,10 +1,8 @@
-import type { Dispatch, SetStateAction } from "react"
-import { Dialog, DialogHeader } from "./ui/dialog"
-import { DialogContent, DialogDescription } from "@radix-ui/react-dialog"
-import Image from "next/image"
-import { DialogTitle } from "@headlessui/react"
-import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs"
-import { buttonVariants } from "./ui/button"
+import type { Dispatch, SetStateAction } from 'react'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, } from './ui/dialog'
+import Image from 'next/image'
+import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+import { buttonVariants } from './ui/button'
 
 
 

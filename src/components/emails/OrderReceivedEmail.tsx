@@ -14,7 +14,7 @@ const OrderReceivedEmail = ({
     orderDate:string
 }) => {
 
-    const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://caseshop.vercel.app'
+    const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://caseshop-ti.netlify.app/'
 
 
     return (

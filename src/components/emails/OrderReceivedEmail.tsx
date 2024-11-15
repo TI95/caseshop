@@ -1,6 +1,5 @@
 import { ShippingAddress } from "@prisma/client"
-import { Body, Column, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components"
-import { Heading } from "lucide-react"
+import { Body, Column, Heading, Container, Head, Hr, Html, Img, Preview, Row, Section, Text } from "@react-email/components"
 
 
 const OrderReceivedEmail = ({
